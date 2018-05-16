@@ -1,0 +1,22 @@
+<a class="view_more" ng-show="vm.hasMoreItemsToShow()" ng-click="vm.showMoreItems()">
+      View more {{ vm.columns.length - 2 }} comments
+</a>
+<div ng-repeat="comment in vm.columns | limitTo: -vm.limit_count" class="comment-item">
+  <comment comment="comment"></comment>
+</div>
+<form class="comment-form" role="form" ng-submit="vm.submit()">
+  <div class="form-group">
+    <textarea text-angular=""placeholder="Leave your feedback here." class="comment-input" ng-model="vm.comment"></textarea>
+    <div class="comment-buttons" style="display: none;">
+        <button type="submit" class="btn btn-primary comment__submit">
+          Post
+        </button>
+    </div>
+  </div>
+</form>
+<div class="comment-loader" ng-show="vm.isCommented">
+    <svg class="circular">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+    </svg>
+</div>
+

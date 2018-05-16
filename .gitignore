@@ -1,0 +1,20 @@
+venv
+*.pyc
+staticfiles/
+prism/local_settings.py
+.idea/
+# Python compiled byte code
+*.pyc
+
+# Node modules
+node_modules/
+npm-debug.log
+
+# Bower components
+static/bower_components/
+
+# Uglified JavaScript
+dist/
+
+# Cached resource files
+CACHE/

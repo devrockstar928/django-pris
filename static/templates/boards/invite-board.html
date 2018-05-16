@@ -1,0 +1,15 @@
+<label for="board__content"><h1>Invite to this board</h1></label>
+  <form role="form" ng-submit="submit()" id="invite-board-form" class="invite-board-form">
+  <input type="text" class="board_textbox board_email" ng-model="email" placeholder="Enter email addresses to share this board."/>
+  <textarea class="board_textbox board_content invite-desc" placeholder="Enter your invitation message here." text-angular="" ng-model="description"></textarea>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">
+      Invite
+    </button>
+  </div>
+</form>
+<div class="board-loader" ng-show="isPosted">
+  <svg class="circular">
+    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+  </svg>
+</div>

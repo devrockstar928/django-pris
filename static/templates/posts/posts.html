@@ -1,0 +1,64 @@
+
+<div id="posts" class="row" ng-cloak>
+
+    <div id="add-posts" ng-cloak ng-show="posts.length == 0" class="row ng-cloak">
+
+        <div class="no-float col-xs-12 col-sm-6 col-md-4 col-lg-4">
+            <a style="display:block !important;"
+               href="javascript:void(0)"
+               ng-show="vm.isAuthenticated"
+               ng-dialog="/static/templates/posts/new-post.html"
+               ng-dialog-controller="NewPostController as vm">
+                <div class="image__content">
+                    <div class="ng-scope">
+                        <div class="drop">
+                            <p>
+                              <center class="content_plus">+</center>
+                              <center class="content_add">ADD CONTENT</center>
+                              <span class="lighter">Click here to upload.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="posts" ng-repeat="column in vm.scroll_columns">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+          <div infinite-scroll="loadMore()" infinite-scroll-distance="2">
+              <div ng-repeat="post in column">
+                  <div ng-if="$parent.$index + $index == 0">
+                        <a style="display:block !important;"
+                           href="javascript:void(0)"
+                           ng-show="vm.isAuthenticated"
+                           ng-dialog="/static/templates/posts/new-post.html"
+                           ng-dialog-controller="NewPostController as vm">
+                            <div class="image__content">
+                                <div class="ng-scope">
+                                    <div class="drop">
+                                        <p>
+                                          <center class="content_plus">+</center>
+                                          <center class="content_add">ADD CONTENT</center>
+                                          <span class="lighter">Click here to upload.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                  </div>
+                  <div ng-if="$parent.$index + $index != 0">
+                    <post post="post"></post>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="loader" ng-cloak ng-hide="posts">
+        <svg class="circular">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+        </svg>
+    </div>
+
+</div>

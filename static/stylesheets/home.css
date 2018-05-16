@@ -1,0 +1,2227 @@
+@charset "UTF-8";
+html {
+  box-sizing: border-box; }
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit; }
+
+button, input[type="button"], input[type="reset"], input[type="submit"],
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  -webkit-font-smoothing: antialiased;
+  background-color: #477dca;
+  border-radius: 3px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1em;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap; }
+  button:hover,
+  button:focus, input[type="button"]:hover,
+  input[type="button"]:focus, input[type="reset"]:hover,
+  input[type="reset"]:focus, input[type="submit"]:hover,
+  input[type="submit"]:focus,
+  button:hover,
+  button:focus {
+    background-color: #2c5999;
+    color: #fff; }
+  button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled,
+  button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5; }
+
+fieldset {
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  margin: 0 0 0.75em;
+  padding: 1.5em; }
+
+input,
+label,
+select {
+  display: block;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em; }
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.375em; }
+  label.required::after {
+    content: "*"; }
+  label abbr {
+    display: none; }
+
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], textarea,
+select[multiple=multiple],
+textarea {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  margin-bottom: 0.75em;
+  padding: 0.5em;
+  transition: border-color;
+  width: 100%; }
+  input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, textarea:hover,
+  select[multiple=multiple]:hover,
+  textarea:hover {
+    border-color: #c4c4c4; }
+  input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, textarea:focus,
+  select[multiple=multiple]:focus,
+  textarea:focus {
+    border-color: #477dca;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(55, 112, 192, 0.7);
+    outline: none; }
+
+textarea {
+  resize: vertical; }
+
+input[type="search"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none; }
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+  margin-right: 0.375em; }
+
+input[type="file"] {
+  padding-bottom: 0.75em;
+  width: 100%; }
+
+select {
+  margin-bottom: 1.5em;
+  max-width: 100%;
+  width: auto; }
+
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+dl {
+  margin-bottom: 0.75em; }
+  dl dt {
+    font-weight: bold;
+    margin-top: 0.75em; }
+  dl dd {
+    margin: 0; }
+
+table {
+  -webkit-font-feature-settings: "kern", "liga", "tnum";
+  -moz-font-feature-settings: "kern", "liga", "tnum";
+  -ms-font-feature-settings: "kern", "liga", "tnum";
+  font-feature-settings: "kern", "liga", "tnum";
+  border-collapse: collapse;
+  margin: 0.75em 0;
+  table-layout: fixed;
+  width: 100%; }
+
+th {
+  border-bottom: 1px solid #b7b7b7;
+  font-weight: 600;
+  padding: 0.75em 0;
+  text-align: left; }
+
+td {
+  border-bottom: 1px solid #ddd;
+  padding: 0.75em 0; }
+
+tr,
+td,
+th {
+  vertical-align: middle; }
+
+body {
+  -webkit-font-feature-settings: "kern", "liga", "pnum";
+  -moz-font-feature-settings: "kern", "liga", "pnum";
+  -ms-font-feature-settings: "kern", "liga", "pnum";
+  font-feature-settings: "kern", "liga", "pnum";
+  -webkit-font-smoothing: antialiased;
+  color: #333;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  line-height: 1.5; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  line-height: 1.2;
+  margin: 0 0 0.75em; }
+
+p {
+  margin: 0 0 0.75em; }
+
+a {
+  color: #477dca;
+  text-decoration: none;
+  transition: color 0.1s linear; }
+  a:active,
+  a:focus,
+  a:hover {
+    color: #2c5999; }
+  a:active,
+  a:focus {
+    outline: none; }
+
+hr {
+  border-bottom: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin: 1.5em 0; }
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%; }
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif; }
+
+.container {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding: 0 5%; }
+  .container::after {
+    clear: both;
+    content: "";
+    display: table; }
+  @media screen and (min-width: 68em) {
+    .container {
+      padding: 0; } }
+
+.alternate {
+  background: #F9F9FA; }
+
+a {
+  color: #A36AEB; }
+  a:active,
+  a:focus,
+  a:hover {
+    color: #7927e2; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif; }
+  h1 em, h2 em, h3 em, h4 em, h5 em, h6 em {
+    color: #A36AEB;
+    font-style: normal; }
+
+h1 {
+  font-weight: 200;
+  letter-spacing: -1px; 
+  font-size: 3.125em;
+}
+
+h2 {
+  font-weight: 200;
+  font-size: 1.875em; }
+
+h3 {
+  font-weight: 200;
+  font-size: 1.375em; }
+
+h4 {
+  font-weight: 700;
+  font-size: 1.125em; }
+
+header {
+  padding: 2.5em 0 3.125em; }
+  header .logo {
+    overflow: hidden;
+    text-indent: 101%;
+    white-space: nowrap;
+    float:left;
+    margin:10px 5px;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background-image: url("/static/img/home-prism-logo.png");
+    height: 38px;
+    width: 151px;
+    background-repeat: no-repeat; }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3/1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
+      header .logo {
+        background-image: url("/static/img/prism-logo_2x.png");
+        background-size: 151px 38px; } }
+    @media screen and (min-width: 68em) {
+      header .logo {
+        left: 0; } }
+  header nav {
+    text-align: right; }
+
+nav ul li {
+  display: inline-block;
+  margin: 0 1.25em; }
+  nav ul li a {
+    color: #343434;
+    text-transform: uppercase;
+    font-size: 0.875em;
+    font-weight: 700; }
+
+.hero {
+  padding: 0 0 2.5em 0; }
+  .hero h1 {
+    display: inline-block;
+    margin-right: 2.35765%;
+    width: 100%; }
+    .hero h1:last-child {
+      margin-right: 0; }
+  .hero p {
+    clear: both;
+    color: #989898;
+    font-size: 1em;
+    margin-bottom: 2.5em;
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%; }
+    .hero p:last-child {
+      margin-right: 0; }
+  .hero .btn-group {
+    clear: both;
+    text-align: center; }
+    .hero .btn-group .btn, .hero .btn-group .btn-primary {
+      margin-bottom: 1.25em; }
+  @media screen and (min-width: 40em) {
+    #home-tagline{width:45%;float:left;padding-top:30px;}
+    .hero .btn-group {
+      text-align: left; }
+    .hero h1 {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      }
+      .hero h1:last-child {
+        margin-right: 0; }
+    .hero p {
+      font-size: 1.375em;
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+       }
+      .hero p:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 48em) {
+    .hero {
+      background-image: url("/static/img/bg-hero.png");
+      background-repeat: no-repeat;
+      background-position: 37.5em 50%;
+      padding: 3.75em 0 6.875em; } }
+  @media only screen and (min-width: 48em) and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-width: 48em) and (min--moz-device-pixel-ratio: 1.3), only screen and (min-width: 48em) and (-o-min-device-pixel-ratio: 1.3/1), only screen and (min-width: 48em) and (min-resolution: 125dpi), only screen and (min-width: 48em) and (min-resolution: 1.3dppx) {
+    .hero {
+      background-image: url("/static/img/bg-hero_2x.png");
+      background-size: 50%; } }
+  @media screen and (min-width: 68em) {
+    .hero {
+      background-image: url("/static/img/bg-hero.png");
+      background-position: 130% top;
+      padding: 3.75em 0 6.875em; } }
+  @media only screen and (min-width: 68em) and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-width: 68em) and (min--moz-device-pixel-ratio: 1.3), only screen and (min-width: 68em) and (-o-min-device-pixel-ratio: 1.3/1), only screen and (min-width: 68em) and (min-resolution: 125dpi), only screen and (min-width: 68em) and (min-resolution: 1.3dppx) {
+    .hero {
+      background-image: url("/static/img/bg-hero_2x.png");
+      background-size: 746px 532px; } }
+  @media screen and (min-width: 90em) {
+    .hero {
+      background-position: 100% top; } }
+
+.faq {
+  padding-bottom: 1.875em; }
+  .faq-item {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+    padding: 1.875em 0 0;
+    text-align: center; }
+    .faq-item:last-child {
+      margin-right: 0; }
+    .faq-item h3 {
+      font-size: 1em;
+      font-weight: 700;
+      margin: 0.5em 0 1em; }
+    .faq-item p {
+      color: #989898;
+      font-size: 0.875em; }
+    .faq-item a {
+      text-decoration: underline; }
+    .faq-item .ss-icon {
+      color: #A36AEB;
+      font-size: 2.5em; }
+  @media screen and (min-width: 40em) {
+    .faq {
+      padding-bottom: 0em; }
+      .faq-item {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 31.76157%;
+        padding: 1.875em 0 2.5em; }
+        .faq-item:last-child {
+          margin-right: 0; }
+        .faq-item:nth-child(3n) {
+          margin-right: 0; }
+        .faq-item:nth-child(3n+1) {
+          clear: left; } }
+
+.feature {
+  clear: both;
+  padding: 3.125em 0;
+  overflow: hidden; }
+  .feature-content {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+    padding-top: 1.25em; }
+    .feature-content:last-child {
+      margin-right: 0; }
+    .feature-content ul {
+      margin-top: 2em; }
+      .feature-content ul li {
+        margin-bottom: 2em;
+        padding-left: 2em;
+        color: #989898;
+        background-image: url("/static/img/check.png");
+        background-repeat: no-repeat;
+        background-position: left 0.3125em; }
+        @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3/1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
+          .feature-content ul li {
+            background-image: url("/static/img/check_2x.png");
+            background-size: 20px 16px; } }
+    .feature-content hr {
+      width: 100%; }
+    .feature-content blockquote {
+      margin: 0;
+      padding: 0;
+      width: 100%; }
+      .feature-content blockquote p {
+        color: #989898;
+        font-size: 1.125em;
+        font-style: italic; }
+      .feature-content blockquote footer {
+        font-size: 0.875em; }
+        .feature-content blockquote footer img {
+          float: left;
+          margin-right: 0.625em; }
+        .feature-content blockquote footer a {
+          display: block; }
+  .feature-image img {
+    max-width: none;
+    width: 100%;
+    height: auto; }
+  .feature-2 .feature-image img {
+    position: relative;
+    right: -15%;
+    width: initial; }
+  .feature-3 .feature-image img {
+    position: relative;
+    left: -15%; }
+  @media screen and (min-width: 68em) {
+    .feature {
+      max-height: 38.125em;
+      padding: 5em 0 3.125em; }
+      .feature-content {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 40.29137%;
+        padding-top: 4.375em; }
+        .feature-content:last-child {
+          margin-right: 0; }
+        .feature-content hr {
+          width: 80%; }
+        .feature-content blockquote {
+          width: 85%; }
+      .feature-image img {
+        width: auto; }
+        .feature-image img.landscape {
+          height: 481px; }
+        .feature-image img.portrait {
+          height: 530px; }
+      .feature-2 .feature-image img {
+        position: relative;
+        right: -30%; }
+      .feature.align-left .feature-image {
+        margin-right: 7%; }
+      .feature.align-left .feature-image, .feature.align-left .feature-content {
+        float: left; }
+      .feature.align-right .feature-image {
+        position: absolute;
+        top: 0;
+        right: -10%; } }
+
+.cta {
+  background-image: url("/static/img/bg-section-signup.png");
+  padding: 3.125em 0;
+  text-align: center; }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3/1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
+    .cta {
+      background-image: url("/static/img/bg-section-signup_2x.png");
+      background-size: 1440px 335px; } }
+  .cta h2 {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%; }
+    .cta h2:last-child {
+      margin-right: 0; }
+  .cta .btn-group {
+    clear: both;
+    text-align: center; }
+    .cta .btn-group .btn, .cta .btn-group .btn-primary {
+      margin-bottom: 1.25em; }
+  @media screen and (min-width: 40em) {
+    .cta {
+      padding: 3.75em 0 5em; }
+      .cta h2 {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 31.76157%;
+        margin-left: 34.11922%;
+        padding: 1.25em; }
+        .cta h2:last-child {
+          margin-right: 0; } }
+
+.tools {
+  padding: 3.75em 0 5em;
+  text-align: center; }
+  .tools h2 {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%; }
+    .tools h2:last-child {
+      margin-right: 0; }
+  .tools img {
+    margin-bottom: 1.5625em; }
+  .tools img, .tools h3 {
+    clear: both; }
+  .tools h3 {
+    margin-bottom: 1.5625em; }
+  .tools ul li {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+    margin-bottom: 1.5625em; }
+    .tools ul li:last-child {
+      margin-right: 0; }
+  .tools ul p {
+    padding: 0 1.25em;
+    line-height: 1.125em;
+    font-size: 1.125em; }
+  .tools h4 {
+    margin-bottom: 0.3125em; }
+  .tools img {
+    max-width: none;
+    width: 100%;
+    height: auto; }
+  .tools .ss-icon {
+    color: #A36AEB;
+    font-size: 2.5em; }
+  @media screen and (min-width: 40em) {
+    .tools h2 {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 48.82117%;
+      margin-left: 25.58941%;
+      padding: 1.25em;
+      margin-bottom: 0; }
+      .tools h2:last-child {
+        margin-right: 0; }
+    .tools h3 {
+      margin-bottom: 3.125em; }
+    .tools img {
+      width: 436px;
+      height: auto;
+      margin-bottom: 3.125em; }
+    .tools ul li {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 31.76157%;
+      margin-bottom: 0; }
+      .tools ul li:last-child {
+        margin-right: 0; }
+      .tools ul li:nth-child(3n) {
+        margin-right: 0; }
+      .tools ul li:nth-child(3n+1) {
+        clear: left; }
+    .tools ul p {
+      padding: 0 3.75em;
+      line-height: 1.125em;
+      font-size: 1.125em; } }
+
+.btn, .btn:hover,
+.btn:active,
+.btn:focus, .btn-primary {
+  color: #FFFFFF;
+  background: #A36AEB;
+  border: 2px solid transparent;
+  border-radius: 2px;
+  padding: 0.625em 1.6875em;
+  display: inline-block;
+  -webkit-transition: all 0.05s;
+  -moz-transition: all 0.05s;
+  transition: all 0.05s;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: 700; }
+  .btn a, .btn:hover a,
+  .btn:active a,
+  .btn:focus a, .btn-primary a {
+    color: #A36AEB; }
+  .btn:hover,
+  .btn-primary:hover,
+  .btn:active,
+  .btn-primary:active,
+  .btn:focus, .btn-primary:focus {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1); }
+  .btn-secondary, .btn-secondary:hover,
+  .btn-secondary:active,
+  .btn-secondary:focus {
+    color: #A36AEB;
+    background: transparent;
+    border: 2px solid #A36AEB; }
+  .btn-small, .btn-small:hover,
+  .btn-small:active,
+  .btn-small:focus {
+    padding: 0.625em; }
+
+.btn-group .btn, .btn-group .btn-primary {
+  margin: 0 0.75em; }
+
+@media screen and (min-width: 40em) {
+  .btn-group .btn:first-child, .btn-group .btn-primary:first-child {
+    margin-left: 0; } }
+
+/*
+* Symbolset
+* www.symbolset.com
+* Copyright © 2012 Oak Studios LLC
+*
+* Upload this file to your web server
+* and place this within your <head> tags.
+* <link href="webfonts/ss-standard.css" rel="stylesheet" />
+*/
+@font-face {
+  font-family: "SSStandard";
+  src: url("ss-gizmo/ss-standard.eot");
+  src: url("ss-gizmo/ss-standard.eot?#iefix") format("embedded-opentype"), url("ss-gizmo/ss-standard.woff") format("woff"), url("ss-gizmo/ss-standard.ttf") format("truetype"), url("ss-gizmo/ss-standard.svg#SSStandard") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* This triggers a redraw in IE to Fix IE8's :before content rendering. */
+html:hover [class^="ss-"] {
+  -ms-zoom: 1; }
+
+.ss-icon, .ss-icon.ss-standard,
+[class^="ss-"]:before, [class*=" ss-"]:before,
+[class^="ss-"].ss-standard:before, [class*=" ss-"].ss-standard:before,
+[class^="ss-"].right:after, [class*=" ss-"].right:after,
+[class^="ss-"].ss-standard.right:after, [class*=" ss-"].ss-standard.right:after {
+  font-family: "SSStandard";
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  white-space: nowrap;
+  /*-webkit-font-feature-settings: "liga"; Currently broken in Chrome >= v22. Falls back to text-rendering. Safari is unaffected. */
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  -o-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased; }
+
+[class^="ss-"].right:before,
+[class*=" ss-"].right:before {
+  display: none;
+  content: ''; }
+
+.ss-cursor:before, .ss-cursor.right:after {
+  content: ''; }
+
+.ss-crosshair:before, .ss-crosshair.right:after {
+  content: '⌖'; }
+
+.ss-search:before, .ss-search.right:after {
+  content: '🔎'; }
+
+.ss-zoomin:before, .ss-zoomin.right:after {
+  content: ''; }
+
+.ss-zoomout:before, .ss-zoomout.right:after {
+  content: ''; }
+
+.ss-view:before, .ss-view.right:after {
+  content: '👀'; }
+
+.ss-attach:before, .ss-attach.right:after {
+  content: '📎'; }
+
+.ss-link:before, .ss-link.right:after {
+  content: '🔗'; }
+
+.ss-move:before, .ss-move.right:after {
+  content: ''; }
+
+.ss-write:before, .ss-write.right:after {
+  content: '✎'; }
+
+.ss-writingdisabled:before, .ss-writingdisabled.right:after {
+  content: ''; }
+
+.ss-erase:before, .ss-erase.right:after {
+  content: '✐'; }
+
+.ss-compose:before, .ss-compose.right:after {
+  content: '📝'; }
+
+.ss-lock:before, .ss-lock.right:after {
+  content: '🔒'; }
+
+.ss-unlock:before, .ss-unlock.right:after {
+  content: '🔓'; }
+
+.ss-key:before, .ss-key.right:after {
+  content: '🔑'; }
+
+.ss-backspace:before, .ss-backspace.right:after {
+  content: '⌫'; }
+
+.ss-ban:before, .ss-ban.right:after {
+  content: '🚫'; }
+
+.ss-trash:before, .ss-trash.right:after {
+  content: ''; }
+
+.ss-target:before, .ss-target.right:after {
+  content: '◎'; }
+
+.ss-tag:before, .ss-tag.right:after {
+  content: ''; }
+
+.ss-bookmark:before, .ss-bookmark.right:after {
+  content: '🔖'; }
+
+.ss-flag:before, .ss-flag.right:after {
+  content: '⚑'; }
+
+.ss-like:before, .ss-like.right:after {
+  content: '👍'; }
+
+.ss-dislike:before, .ss-dislike.right:after {
+  content: '👎'; }
+
+.ss-heart:before, .ss-heart.right:after {
+  content: '♥'; }
+
+.ss-halfheart:before, .ss-halfheart.right:after {
+  content: ''; }
+
+.ss-star:before, .ss-star.right:after {
+  content: '⋆'; }
+
+.ss-halfstar:before, .ss-halfstar.right:after {
+  content: ''; }
+
+.ss-sample:before, .ss-sample.right:after {
+  content: ''; }
+
+.ss-crop:before, .ss-crop.right:after {
+  content: ''; }
+
+.ss-layers:before, .ss-layers.right:after {
+  content: ''; }
+
+.ss-fill:before, .ss-fill.right:after {
+  content: ''; }
+
+.ss-stroke:before, .ss-stroke.right:after {
+  content: ''; }
+
+.ss-phone:before, .ss-phone.right:after {
+  content: '📞'; }
+
+.ss-phonedisabled:before, .ss-phonedisabled.right:after {
+  content: ''; }
+
+.ss-rss:before, .ss-rss.right:after {
+  content: ''; }
+
+.ss-facetime:before, .ss-facetime.right:after {
+  content: ''; }
+
+.ss-reply:before, .ss-reply.right:after {
+  content: '↩'; }
+
+.ss-send:before, .ss-send.right:after {
+  content: ''; }
+
+.ss-mail:before, .ss-mail.right:after {
+  content: '✉'; }
+
+.ss-inbox:before, .ss-inbox.right:after {
+  content: '📥'; }
+
+.ss-chat:before, .ss-chat.right:after {
+  content: '💬'; }
+
+.ss-ellipsischat:before, .ss-ellipsischat.right:after {
+  content: ''; }
+
+.ss-ellipsis:before, .ss-ellipsis.right:after {
+  content: '…'; }
+
+.ss-user:before, .ss-user.right:after {
+  content: '👤'; }
+
+.ss-femaleuser:before, .ss-femaleuser.right:after {
+  content: '👧'; }
+
+.ss-users:before, .ss-users.right:after {
+  content: '👥'; }
+
+.ss-cart:before, .ss-cart.right:after {
+  content: ''; }
+
+.ss-creditcard:before, .ss-creditcard.right:after {
+  content: '💳'; }
+
+.ss-dollarsign:before, .ss-dollarsign.right:after {
+  content: '💲'; }
+
+.ss-barchart:before, .ss-barchart.right:after {
+  content: '📊'; }
+
+.ss-piechart:before, .ss-piechart.right:after {
+  content: ''; }
+
+.ss-box:before, .ss-box.right:after {
+  content: '📦'; }
+
+.ss-home:before, .ss-home.right:after {
+  content: '⌂'; }
+
+.ss-buildings:before, .ss-buildings.right:after {
+  content: '🏢'; }
+
+.ss-warehouse:before, .ss-warehouse.right:after {
+  content: ''; }
+
+.ss-globe:before, .ss-globe.right:after {
+  content: '🌎'; }
+
+.ss-navigate:before, .ss-navigate.right:after {
+  content: ''; }
+
+.ss-compass:before, .ss-compass.right:after {
+  content: ''; }
+
+.ss-signpost:before, .ss-signpost.right:after {
+  content: ''; }
+
+.ss-map:before, .ss-map.right:after {
+  content: ''; }
+
+.ss-location:before, .ss-location.right:after {
+  content: ''; }
+
+.ss-pin:before, .ss-pin.right:after {
+  content: '📍'; }
+
+.ss-database:before, .ss-database.right:after {
+  content: ''; }
+
+.ss-hdd:before, .ss-hdd.right:after {
+  content: ''; }
+
+.ss-music:before, .ss-music.right:after {
+  content: '♫'; }
+
+.ss-mic:before, .ss-mic.right:after {
+  content: '🎤'; }
+
+.ss-volume:before, .ss-volume.right:after {
+  content: '🔈'; }
+
+.ss-lowvolume:before, .ss-lowvolume.right:after {
+  content: '🔉'; }
+
+.ss-highvolume:before, .ss-highvolume.right:after {
+  content: '🔊'; }
+
+.ss-airplay:before, .ss-airplay.right:after {
+  content: ''; }
+
+.ss-camera:before, .ss-camera.right:after {
+  content: '📷'; }
+
+.ss-picture:before, .ss-picture.right:after {
+  content: '🌄'; }
+
+.ss-video:before, .ss-video.right:after {
+  content: '📹'; }
+
+.ss-play:before, .ss-play.right:after {
+  content: '▶'; }
+
+.ss-pause:before, .ss-pause.right:after {
+  content: ''; }
+
+.ss-stop:before, .ss-stop.right:after {
+  content: '■'; }
+
+.ss-record:before, .ss-record.right:after {
+  content: '●'; }
+
+.ss-rewind:before, .ss-rewind.right:after {
+  content: '⏪'; }
+
+.ss-fastforward:before, .ss-fastforward.right:after {
+  content: '⏩'; }
+
+.ss-skipback:before, .ss-skipback.right:after {
+  content: '⏮'; }
+
+.ss-skipforward:before, .ss-skipforward.right:after {
+  content: '⏭'; }
+
+.ss-eject:before, .ss-eject.right:after {
+  content: '⏏'; }
+
+.ss-repeat:before, .ss-repeat.right:after {
+  content: '🔁'; }
+
+.ss-replay:before, .ss-replay.right:after {
+  content: '↺'; }
+
+.ss-shuffle:before, .ss-shuffle.right:after {
+  content: '🔀'; }
+
+.ss-book:before, .ss-book.right:after {
+  content: '📕'; }
+
+.ss-openbook:before, .ss-openbook.right:after {
+  content: '📖'; }
+
+.ss-notebook:before, .ss-notebook.right:after {
+  content: '📓'; }
+
+.ss-newspaper:before, .ss-newspaper.right:after {
+  content: '📰'; }
+
+.ss-grid:before, .ss-grid.right:after {
+  content: ''; }
+
+.ss-rows:before, .ss-rows.right:after {
+  content: ''; }
+
+.ss-columns:before, .ss-columns.right:after {
+  content: ''; }
+
+.ss-thumbnails:before, .ss-thumbnails.right:after {
+  content: ''; }
+
+.ss-filter:before, .ss-filter.right:after {
+  content: ''; }
+
+.ss-desktop:before, .ss-desktop.right:after {
+  content: '💻'; }
+
+.ss-laptop:before, .ss-laptop.right:after {
+  content: ''; }
+
+.ss-tablet:before, .ss-tablet.right:after {
+  content: ''; }
+
+.ss-cell:before, .ss-cell.right:after {
+  content: '📱'; }
+
+.ss-battery:before, .ss-battery.right:after {
+  content: '🔋'; }
+
+.ss-highbattery:before, .ss-highbattery.right:after {
+  content: ''; }
+
+.ss-mediumbattery:before, .ss-mediumbattery.right:after {
+  content: ''; }
+
+.ss-lowbattery:before, .ss-lowbattery.right:after {
+  content: ''; }
+
+.ss-emptybattery:before, .ss-emptybattery.right:after {
+  content: ''; }
+
+.ss-lightbulb:before, .ss-lightbulb.right:after {
+  content: '💡'; }
+
+.ss-downloadcloud:before, .ss-downloadcloud.right:after {
+  content: ''; }
+
+.ss-download:before, .ss-download.right:after {
+  content: ''; }
+
+.ss-uploadcloud:before, .ss-uploadcloud.right:after {
+  content: ''; }
+
+.ss-upload:before, .ss-upload.right:after {
+  content: ''; }
+
+.ss-fork:before, .ss-fork.right:after {
+  content: ''; }
+
+.ss-merge:before, .ss-merge.right:after {
+  content: ''; }
+
+.ss-transfer:before, .ss-transfer.right:after {
+  content: '⇆'; }
+
+.ss-refresh:before, .ss-refresh.right:after {
+  content: '↻'; }
+
+.ss-sync:before, .ss-sync.right:after {
+  content: ''; }
+
+.ss-loading:before, .ss-loading.right:after {
+  content: ''; }
+
+.ss-wifi:before, .ss-wifi.right:after {
+  content: ''; }
+
+.ss-connection:before, .ss-connection.right:after {
+  content: ''; }
+
+.ss-file:before, .ss-file.right:after {
+  content: '📄'; }
+
+.ss-folder:before, .ss-folder.right:after {
+  content: '📁'; }
+
+.ss-quote:before, .ss-quote.right:after {
+  content: '“'; }
+
+.ss-text:before, .ss-text.right:after {
+  content: ''; }
+
+.ss-font:before, .ss-font.right:after {
+  content: ''; }
+
+.ss-print:before, .ss-print.right:after {
+  content: '⎙'; }
+
+.ss-fax:before, .ss-fax.right:after {
+  content: '📠'; }
+
+.ss-list:before, .ss-list.right:after {
+  content: ''; }
+
+.ss-layout:before, .ss-layout.right:after {
+  content: ''; }
+
+.ss-action:before, .ss-action.right:after {
+  content: ''; }
+
+.ss-redirect:before, .ss-redirect.right:after {
+  content: '↪'; }
+
+.ss-expand:before, .ss-expand.right:after {
+  content: '⤢'; }
+
+.ss-contract:before, .ss-contract.right:after {
+  content: ''; }
+
+.ss-help:before, .ss-help.right:after {
+  content: '❓'; }
+
+.ss-info:before, .ss-info.right:after {
+  content: 'ℹ'; }
+
+.ss-alert:before, .ss-alert.right:after {
+  content: '⚠'; }
+
+.ss-caution:before, .ss-caution.right:after {
+  content: '⛔'; }
+
+.ss-logout:before, .ss-logout.right:after {
+  content: ''; }
+
+.ss-plus:before, .ss-plus.right:after {
+  content: '+'; }
+
+.ss-hyphen:before, .ss-hyphen.right:after {
+  content: '-'; }
+
+.ss-check:before, .ss-check.right:after {
+  content: '✓'; }
+
+.ss-delete:before, .ss-delete.right:after {
+  content: '␡'; }
+
+.ss-settings:before, .ss-settings.right:after {
+  content: '⚙'; }
+
+.ss-dashboard:before, .ss-dashboard.right:after {
+  content: ''; }
+
+.ss-notifications:before, .ss-notifications.right:after {
+  content: '🔔'; }
+
+.ss-notificationsdisabled:before, .ss-notificationsdisabled.right:after {
+  content: '🔕'; }
+
+.ss-clock:before, .ss-clock.right:after {
+  content: '⏲'; }
+
+.ss-stopwatch:before, .ss-stopwatch.right:after {
+  content: '⏱'; }
+
+.ss-calendar:before, .ss-calendar.right:after {
+  content: '📅'; }
+
+.ss-addcalendar:before, .ss-addcalendar.right:after {
+  content: ''; }
+
+.ss-removecalendar:before, .ss-removecalendar.right:after {
+  content: ''; }
+
+.ss-checkcalendar:before, .ss-checkcalendar.right:after {
+  content: ''; }
+
+.ss-deletecalendar:before, .ss-deletecalendar.right:after {
+  content: ''; }
+
+.ss-plane:before, .ss-plane.right:after {
+  content: '✈'; }
+
+.ss-briefcase:before, .ss-briefcase.right:after {
+  content: '💼'; }
+
+.ss-cloud:before, .ss-cloud.right:after {
+  content: '☁'; }
+
+.ss-droplet:before, .ss-droplet.right:after {
+  content: '💧'; }
+
+.ss-flask:before, .ss-flask.right:after {
+  content: ''; }
+
+.ss-up:before, .ss-up.right:after {
+  content: '⬆'; }
+
+.ss-upright:before, .ss-upright.right:after {
+  content: '⬈'; }
+
+.ss-right:before, .ss-right.right:after {
+  content: '➡'; }
+
+.ss-downright:before, .ss-downright.right:after {
+  content: '⬊'; }
+
+.ss-down:before, .ss-down.right:after {
+  content: '⬇'; }
+
+.ss-downleft:before, .ss-downleft.right:after {
+  content: '⬋'; }
+
+.ss-left:before, .ss-left.right:after {
+  content: '⬅'; }
+
+.ss-upleft:before, .ss-upleft.right:after {
+  content: '⬉'; }
+
+.ss-navigateup:before, .ss-navigateup.right:after {
+  content: ''; }
+
+.ss-navigateright:before, .ss-navigateright.right:after {
+  content: '▻'; }
+
+.ss-navigatedown:before, .ss-navigatedown.right:after {
+  content: ''; }
+
+.ss-navigateleft:before, .ss-navigateleft.right:after {
+  content: '◅'; }
+
+.ss-directup:before, .ss-directup.right:after {
+  content: '▴'; }
+
+.ss-directright:before, .ss-directright.right:after {
+  content: '▹'; }
+
+.ss-dropdown:before, .ss-dropdown.right:after {
+  content: '▾'; }
+
+.ss-directleft:before, .ss-directleft.right:after {
+  content: '◃'; }
+
+.ss-retweet:before, .ss-retweet.right:after {
+  content: ''; }
+
+/* Legacy classes */
+.ss-volumelow:before, .ss-volumelow.right:after {
+  content: '🔉'; }
+
+.ss-volumehigh:before, .ss-volumehigh.right:after {
+  content: '🔊'; }
+
+.ss-batteryhigh:before, .ss-batteryhigh.right:after {
+  content: ''; }
+
+.ss-batterymedium:before, .ss-batterymedium.right:after {
+  content: ''; }
+
+.ss-batterylow:before, .ss-batterylow.right:after {
+  content: ''; }
+
+.ss-batteryempty:before, .ss-batteryempty.right:after {
+  content: ''; }
+
+.ss-clouddownload:before, .ss-clouddownload.right:after {
+  content: ''; }
+
+.ss-cloudupload:before, .ss-cloudupload.right:after {
+  content: ''; }
+
+.ss-calendaradd:before, .ss-calendaradd.right:after {
+  content: ''; }
+
+.ss-calendarremove:before, .ss-calendarremove.right:after {
+  content: ''; }
+
+.ss-calendarcheck:before, .ss-calendarcheck.right:after {
+  content: ''; }
+
+.ss-calendardelete:before, .ss-calendardelete.right:after {
+  content: ''; }
+
+/*
+* Symbolset
+* www.symbolset.com
+* Copyright © 2012 Oak Studios LLC
+*
+* Upload this file to your web server
+* and place this within your <head> tags.
+* <link href="webfonts/ss-pika.css" rel="stylesheet" />
+*/
+@font-face {
+  font-family: "SSGizmo";
+  src: url("ss-gizmo/ss-gizmo.eot");
+  src: url("ss-gizmo/ss-gizmo.eot?#iefix") format("embedded-opentype"), url("ss-gizmo/ss-gizmo.woff") format("woff"), url("ss-gizmo/ss-gizmo.ttf") format("truetype"), url("ss-gizmo/ss-gizmo.svg#SSGizmo") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+.ss-icon, .ss-icon.ss-gizmo,
+[class^="ss-"]:before, [class*=" ss-"]:before,
+[class^="ss-"].ss-gizmo:before, [class*=" ss-"].ss-gizmo:before,
+[class^="ss-"].right:after, [class*=" ss-"].right:after,
+[class^="ss-"].ss-gizmo.right:after, [class*=" ss-"].ss-gizmo.right:after {
+  font-family: "SSGizmo";
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  white-space: nowrap;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  -o-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased; }
+
+[class^="ss-"].right:before,
+[class*=" ss-"].right:before,
+[class*=" ss-"].ss-gizmo.right:before {
+  display: none;
+  content: ''; }
+
+.ss-cursor:before, .ss-cursor.right:after {
+  content: ''; }
+
+.ss-crosshair:before, .ss-crosshair.right:after {
+  content: '⌖'; }
+
+.ss-search:before, .ss-search.right:after {
+  content: '🔎'; }
+
+.ss-zoomin:before, .ss-zoomin.right:after {
+  content: ''; }
+
+.ss-zoomout:before, .ss-zoomout.right:after {
+  content: ''; }
+
+.ss-view:before, .ss-view.right:after {
+  content: '👀'; }
+
+.ss-attach:before, .ss-attach.right:after {
+  content: '📎'; }
+
+.ss-link:before, .ss-link.right:after {
+  content: '🔗'; }
+
+.ss-unlink:before, .ss-unlink.right:after {
+  content: ''; }
+
+.ss-move:before, .ss-move.right:after {
+  content: ''; }
+
+.ss-write:before, .ss-write.right:after {
+  content: '✎'; }
+
+.ss-writingdisabled:before, .ss-writingdisabled.right:after {
+  content: ''; }
+
+.ss-erase:before, .ss-erase.right:after {
+  content: '✐'; }
+
+.ss-compose:before, .ss-compose.right:after {
+  content: '📝'; }
+
+.ss-lock:before, .ss-lock.right:after {
+  content: '🔒'; }
+
+.ss-unlock:before, .ss-unlock.right:after {
+  content: '🔓'; }
+
+.ss-key:before, .ss-key.right:after {
+  content: '🔑'; }
+
+.ss-backspace:before, .ss-backspace.right:after {
+  content: '⌫'; }
+
+.ss-ban:before, .ss-ban.right:after {
+  content: '🚫'; }
+
+.ss-smoking:before, .ss-smoking.right:after {
+  content: '🚬'; }
+
+.ss-nosmoking:before, .ss-nosmoking.right:after {
+  content: '🚭'; }
+
+.ss-trash:before, .ss-trash.right:after {
+  content: ''; }
+
+.ss-target:before, .ss-target.right:after {
+  content: '◎'; }
+
+.ss-tag:before, .ss-tag.right:after {
+  content: ''; }
+
+.ss-bookmark:before, .ss-bookmark.right:after {
+  content: '🔖'; }
+
+.ss-flag:before, .ss-flag.right:after {
+  content: '⚑'; }
+
+.ss-like:before, .ss-like.right:after {
+  content: '👍'; }
+
+.ss-dislike:before, .ss-dislike.right:after {
+  content: '👎'; }
+
+.ss-heart:before, .ss-heart.right:after {
+  content: '♥'; }
+
+.ss-star:before, .ss-star.right:after {
+  content: '⋆'; }
+
+.ss-sample:before, .ss-sample.right:after {
+  content: ''; }
+
+.ss-crop:before, .ss-crop.right:after {
+  content: ''; }
+
+.ss-layers:before, .ss-layers.right:after {
+  content: ''; }
+
+.ss-layergroup:before, .ss-layergroup.right:after {
+  content: ''; }
+
+.ss-pen:before, .ss-pen.right:after {
+  content: '✒'; }
+
+.ss-bezier:before, .ss-bezier.right:after {
+  content: ''; }
+
+.ss-pixels:before, .ss-pixels.right:after {
+  content: ''; }
+
+.ss-phone:before, .ss-phone.right:after {
+  content: '📞'; }
+
+.ss-phonedisabled:before, .ss-phonedisabled.right:after {
+  content: ''; }
+
+.ss-touchtonephone:before, .ss-touchtonephone.right:after {
+  content: '☏'; }
+
+.ss-mail:before, .ss-mail.right:after {
+  content: '✉'; }
+
+.ss-inbox:before, .ss-inbox.right:after {
+  content: '📥'; }
+
+.ss-outbox:before, .ss-outbox.right:after {
+  content: '📤'; }
+
+.ss-chat:before, .ss-chat.right:after {
+  content: '💬'; }
+
+.ss-user:before, .ss-user.right:after {
+  content: '👤'; }
+
+.ss-users:before, .ss-users.right:after {
+  content: '👥'; }
+
+.ss-usergroup:before, .ss-usergroup.right:after {
+  content: ''; }
+
+.ss-businessuser:before, .ss-businessuser.right:after {
+  content: ''; }
+
+.ss-man:before, .ss-man.right:after {
+  content: '👨'; }
+
+.ss-male:before, .ss-male.right:after {
+  content: ''; }
+
+.ss-woman:before, .ss-woman.right:after {
+  content: '👩'; }
+
+.ss-female:before, .ss-female.right:after {
+  content: ''; }
+
+.ss-raisedhand:before, .ss-raisedhand.right:after {
+  content: '✋'; }
+
+.ss-hand:before, .ss-hand.right:after {
+  content: ''; }
+
+.ss-pointup:before, .ss-pointup.right:after {
+  content: '👆'; }
+
+.ss-pointupright:before, .ss-pointupright.right:after {
+  content: ''; }
+
+.ss-pointright:before, .ss-pointright.right:after {
+  content: '👉'; }
+
+.ss-pointdownright:before, .ss-pointdownright.right:after {
+  content: ''; }
+
+.ss-pointdown:before, .ss-pointdown.right:after {
+  content: '👇'; }
+
+.ss-pointdownleft:before, .ss-pointdownleft.right:after {
+  content: ''; }
+
+.ss-pointleft:before, .ss-pointleft.right:after {
+  content: '👈'; }
+
+.ss-pointupleft:before, .ss-pointupleft.right:after {
+  content: ''; }
+
+.ss-cart:before, .ss-cart.right:after {
+  content: ''; }
+
+.ss-creditcard:before, .ss-creditcard.right:after {
+  content: '💳'; }
+
+.ss-calculator:before, .ss-calculator.right:after {
+  content: ''; }
+
+.ss-barchart:before, .ss-barchart.right:after {
+  content: '📊'; }
+
+.ss-piechart:before, .ss-piechart.right:after {
+  content: ''; }
+
+.ss-box:before, .ss-box.right:after {
+  content: '📦'; }
+
+.ss-home:before, .ss-home.right:after {
+  content: '⌂'; }
+
+.ss-globe:before, .ss-globe.right:after {
+  content: '🌎'; }
+
+.ss-navigate:before, .ss-navigate.right:after {
+  content: ''; }
+
+.ss-compass:before, .ss-compass.right:after {
+  content: ''; }
+
+.ss-signpost:before, .ss-signpost.right:after {
+  content: ''; }
+
+.ss-location:before, .ss-location.right:after {
+  content: ''; }
+
+.ss-floppydisk:before, .ss-floppydisk.right:after {
+  content: '💾'; }
+
+.ss-database:before, .ss-database.right:after {
+  content: ''; }
+
+.ss-hdd:before, .ss-hdd.right:after {
+  content: ''; }
+
+.ss-microchip:before, .ss-microchip.right:after {
+  content: ''; }
+
+.ss-music:before, .ss-music.right:after {
+  content: '♫'; }
+
+.ss-headphones:before, .ss-headphones.right:after {
+  content: '🎧'; }
+
+.ss-discdrive:before, .ss-discdrive.right:after {
+  content: ''; }
+
+.ss-volume:before, .ss-volume.right:after {
+  content: '🔈'; }
+
+.ss-lowvolume:before, .ss-lowvolume.right:after {
+  content: '🔉'; }
+
+.ss-mediumvolume:before, .ss-mediumvolume.right:after {
+  content: ''; }
+
+.ss-highvolume:before, .ss-highvolume.right:after {
+  content: '🔊'; }
+
+.ss-airplay:before, .ss-airplay.right:after {
+  content: ''; }
+
+.ss-camera:before, .ss-camera.right:after {
+  content: '📷'; }
+
+.ss-picture:before, .ss-picture.right:after {
+  content: '🌄'; }
+
+.ss-video:before, .ss-video.right:after {
+  content: '📹'; }
+
+.ss-webcam:before, .ss-webcam.right:after {
+  content: ''; }
+
+.ss-film:before, .ss-film.right:after {
+  content: ''; }
+
+.ss-playvideo:before, .ss-playvideo.right:after {
+  content: ''; }
+
+.ss-videogame:before, .ss-videogame.right:after {
+  content: '🎮'; }
+
+.ss-play:before, .ss-play.right:after {
+  content: '▶'; }
+
+.ss-pause:before, .ss-pause.right:after {
+  content: ''; }
+
+.ss-stop:before, .ss-stop.right:after {
+  content: '■'; }
+
+.ss-record:before, .ss-record.right:after {
+  content: '●'; }
+
+.ss-rewind:before, .ss-rewind.right:after {
+  content: '⏪'; }
+
+.ss-fastforward:before, .ss-fastforward.right:after {
+  content: '⏩'; }
+
+.ss-skipback:before, .ss-skipback.right:after {
+  content: '⏮'; }
+
+.ss-skipforward:before, .ss-skipforward.right:after {
+  content: '⏭'; }
+
+.ss-eject:before, .ss-eject.right:after {
+  content: '⏏'; }
+
+.ss-repeat:before, .ss-repeat.right:after {
+  content: '🔁'; }
+
+.ss-replay:before, .ss-replay.right:after {
+  content: '↺'; }
+
+.ss-shuffle:before, .ss-shuffle.right:after {
+  content: '🔀'; }
+
+.ss-index:before, .ss-index.right:after {
+  content: ''; }
+
+.ss-storagebox:before, .ss-storagebox.right:after {
+  content: ''; }
+
+.ss-book:before, .ss-book.right:after {
+  content: '📕'; }
+
+.ss-notebook:before, .ss-notebook.right:after {
+  content: '📓'; }
+
+.ss-newspaper:before, .ss-newspaper.right:after {
+  content: '📰'; }
+
+.ss-gridlines:before, .ss-gridlines.right:after {
+  content: ''; }
+
+.ss-rows:before, .ss-rows.right:after {
+  content: ''; }
+
+.ss-columns:before, .ss-columns.right:after {
+  content: ''; }
+
+.ss-thumbnails:before, .ss-thumbnails.right:after {
+  content: ''; }
+
+.ss-mouse:before, .ss-mouse.right:after {
+  content: ''; }
+
+.ss-usb:before, .ss-usb.right:after {
+  content: ''; }
+
+.ss-desktop:before, .ss-desktop.right:after {
+  content: '💻'; }
+
+.ss-laptop:before, .ss-laptop.right:after {
+  content: ''; }
+
+.ss-tablet:before, .ss-tablet.right:after {
+  content: ''; }
+
+.ss-smartphone:before, .ss-smartphone.right:after {
+  content: ''; }
+
+.ss-cell:before, .ss-cell.right:after {
+  content: '📱'; }
+
+.ss-battery:before, .ss-battery.right:after {
+  content: '🔋'; }
+
+.ss-highbattery:before, .ss-highbattery.right:after {
+  content: ''; }
+
+.ss-mediumbattery:before, .ss-mediumbattery.right:after {
+  content: ''; }
+
+.ss-lowbattery:before, .ss-lowbattery.right:after {
+  content: ''; }
+
+.ss-chargingbattery:before, .ss-chargingbattery.right:after {
+  content: ''; }
+
+.ss-lightbulb:before, .ss-lightbulb.right:after {
+  content: '💡'; }
+
+.ss-washer:before, .ss-washer.right:after {
+  content: ''; }
+
+.ss-downloadcloud:before, .ss-downloadcloud.right:after {
+  content: ''; }
+
+.ss-download:before, .ss-download.right:after {
+  content: ''; }
+
+.ss-downloadbox:before, .ss-downloadbox.right:after {
+  content: ''; }
+
+.ss-uploadcloud:before, .ss-uploadcloud.right:after {
+  content: ''; }
+
+.ss-upload:before, .ss-upload.right:after {
+  content: ''; }
+
+.ss-uploadbox:before, .ss-uploadbox.right:after {
+  content: ''; }
+
+.ss-fork:before, .ss-fork.right:after {
+  content: ''; }
+
+.ss-merge:before, .ss-merge.right:after {
+  content: ''; }
+
+.ss-refresh:before, .ss-refresh.right:after {
+  content: '↻'; }
+
+.ss-sync:before, .ss-sync.right:after {
+  content: ''; }
+
+.ss-loading:before, .ss-loading.right:after {
+  content: ''; }
+
+.ss-file:before, .ss-file.right:after {
+  content: '📄'; }
+
+.ss-files:before, .ss-files.right:after {
+  content: ''; }
+
+.ss-addfile:before, .ss-addfile.right:after {
+  content: ''; }
+
+.ss-removefile:before, .ss-removefile.right:after {
+  content: ''; }
+
+.ss-checkfile:before, .ss-checkfile.right:after {
+  content: ''; }
+
+.ss-deletefile:before, .ss-deletefile.right:after {
+  content: ''; }
+
+.ss-exe:before, .ss-exe.right:after {
+  content: ''; }
+
+.ss-zip:before, .ss-zip.right:after {
+  content: ''; }
+
+.ss-doc:before, .ss-doc.right:after {
+  content: ''; }
+
+.ss-pdf:before, .ss-pdf.right:after {
+  content: ''; }
+
+.ss-jpg:before, .ss-jpg.right:after {
+  content: ''; }
+
+.ss-png:before, .ss-png.right:after {
+  content: ''; }
+
+.ss-mp3:before, .ss-mp3.right:after {
+  content: ''; }
+
+.ss-rar:before, .ss-rar.right:after {
+  content: ''; }
+
+.ss-gif:before, .ss-gif.right:after {
+  content: ''; }
+
+.ss-folder:before, .ss-folder.right:after {
+  content: '📁'; }
+
+.ss-openfolder:before, .ss-openfolder.right:after {
+  content: '📂'; }
+
+.ss-downloadfolder:before, .ss-downloadfolder.right:after {
+  content: ''; }
+
+.ss-uploadfolder:before, .ss-uploadfolder.right:after {
+  content: ''; }
+
+.ss-quote:before, .ss-quote.right:after {
+  content: '“'; }
+
+.ss-unquote:before, .ss-unquote.right:after {
+  content: '”'; }
+
+.ss-print:before, .ss-print.right:after {
+  content: '⎙'; }
+
+.ss-copier:before, .ss-copier.right:after {
+  content: ''; }
+
+.ss-fax:before, .ss-fax.right:after {
+  content: '📠'; }
+
+.ss-scanner:before, .ss-scanner.right:after {
+  content: ''; }
+
+.ss-printregistration:before, .ss-printregistration.right:after {
+  content: ''; }
+
+.ss-shredder:before, .ss-shredder.right:after {
+  content: ''; }
+
+.ss-expand:before, .ss-expand.right:after {
+  content: '⤢'; }
+
+.ss-contract:before, .ss-contract.right:after {
+  content: ''; }
+
+.ss-help:before, .ss-help.right:after {
+  content: '❓'; }
+
+.ss-info:before, .ss-info.right:after {
+  content: 'ℹ'; }
+
+.ss-alert:before, .ss-alert.right:after {
+  content: '⚠'; }
+
+.ss-caution:before, .ss-caution.right:after {
+  content: '⛔'; }
+
+.ss-logout:before, .ss-logout.right:after {
+  content: ''; }
+
+.ss-login:before, .ss-login.right:after {
+  content: ''; }
+
+.ss-scaleup:before, .ss-scaleup.right:after {
+  content: ''; }
+
+.ss-scaledown:before, .ss-scaledown.right:after {
+  content: ''; }
+
+.ss-plus:before, .ss-plus.right:after {
+  content: '+'; }
+
+.ss-hyphen:before, .ss-hyphen.right:after {
+  content: '-'; }
+
+.ss-check:before, .ss-check.right:after {
+  content: '✓'; }
+
+.ss-delete:before, .ss-delete.right:after {
+  content: '␡'; }
+
+.ss-notifications:before, .ss-notifications.right:after {
+  content: '🔔'; }
+
+.ss-notificationsdisabled:before, .ss-notificationsdisabled.right:after {
+  content: '🔕'; }
+
+.ss-clock:before, .ss-clock.right:after {
+  content: '⏲'; }
+
+.ss-stopwatch:before, .ss-stopwatch.right:after {
+  content: '⏱'; }
+
+.ss-alarmclock:before, .ss-alarmclock.right:after {
+  content: '⏰'; }
+
+.ss-egg:before, .ss-egg.right:after {
+  content: ''; }
+
+.ss-eggs:before, .ss-eggs.right:after {
+  content: ''; }
+
+.ss-cheese:before, .ss-cheese.right:after {
+  content: ''; }
+
+.ss-chickenleg:before, .ss-chickenleg.right:after {
+  content: '🍗'; }
+
+.ss-pizzapie:before, .ss-pizzapie.right:after {
+  content: ''; }
+
+.ss-pizza:before, .ss-pizza.right:after {
+  content: '🍕'; }
+
+.ss-cheesepizza:before, .ss-cheesepizza.right:after {
+  content: ''; }
+
+.ss-frenchfries:before, .ss-frenchfries.right:after {
+  content: '🍟'; }
+
+.ss-apple:before, .ss-apple.right:after {
+  content: '🍏'; }
+
+.ss-carrot:before, .ss-carrot.right:after {
+  content: ''; }
+
+.ss-broccoli:before, .ss-broccoli.right:after {
+  content: ''; }
+
+.ss-cucumber:before, .ss-cucumber.right:after {
+  content: ''; }
+
+.ss-orange:before, .ss-orange.right:after {
+  content: '🍊'; }
+
+.ss-lemon:before, .ss-lemon.right:after {
+  content: '🍋'; }
+
+.ss-onion:before, .ss-onion.right:after {
+  content: ''; }
+
+.ss-bellpepper:before, .ss-bellpepper.right:after {
+  content: ''; }
+
+.ss-peas:before, .ss-peas.right:after {
+  content: ''; }
+
+.ss-grapes:before, .ss-grapes.right:after {
+  content: '🍇'; }
+
+.ss-strawberry:before, .ss-strawberry.right:after {
+  content: '🍓'; }
+
+.ss-bread:before, .ss-bread.right:after {
+  content: '🍞'; }
+
+.ss-mug:before, .ss-mug.right:after {
+  content: '☕'; }
+
+.ss-mugs:before, .ss-mugs.right:after {
+  content: ''; }
+
+.ss-espresso:before, .ss-espresso.right:after {
+  content: ''; }
+
+.ss-macchiato:before, .ss-macchiato.right:after {
+  content: ''; }
+
+.ss-cappucino:before, .ss-cappucino.right:after {
+  content: ''; }
+
+.ss-latte:before, .ss-latte.right:after {
+  content: ''; }
+
+.ss-icedcoffee:before, .ss-icedcoffee.right:after {
+  content: ''; }
+
+.ss-coffeebean:before, .ss-coffeebean.right:after {
+  content: ''; }
+
+.ss-coffeemilk:before, .ss-coffeemilk.right:after {
+  content: ''; }
+
+.ss-coffeefoam:before, .ss-coffeefoam.right:after {
+  content: ''; }
+
+.ss-coffeesugar:before, .ss-coffeesugar.right:after {
+  content: ''; }
+
+.ss-sugarpackets:before, .ss-sugarpackets.right:after {
+  content: ''; }
+
+.ss-capsule:before, .ss-capsule.right:after {
+  content: ''; }
+
+.ss-capsulerecycling:before, .ss-capsulerecycling.right:after {
+  content: ''; }
+
+.ss-insertcapsule:before, .ss-insertcapsule.right:after {
+  content: ''; }
+
+.ss-tea:before, .ss-tea.right:after {
+  content: '🍵'; }
+
+.ss-teabag:before, .ss-teabag.right:after {
+  content: ''; }
+
+.ss-jug:before, .ss-jug.right:after {
+  content: ''; }
+
+.ss-pitcher:before, .ss-pitcher.right:after {
+  content: ''; }
+
+.ss-kettle:before, .ss-kettle.right:after {
+  content: ''; }
+
+.ss-wineglass:before, .ss-wineglass.right:after {
+  content: '🍷'; }
+
+.ss-sugar:before, .ss-sugar.right:after {
+  content: ''; }
+
+.ss-oven:before, .ss-oven.right:after {
+  content: ''; }
+
+.ss-stove:before, .ss-stove.right:after {
+  content: ''; }
+
+.ss-vent:before, .ss-vent.right:after {
+  content: ''; }
+
+.ss-exhaust:before, .ss-exhaust.right:after {
+  content: ''; }
+
+.ss-steam:before, .ss-steam.right:after {
+  content: '♨'; }
+
+.ss-dishwasher:before, .ss-dishwasher.right:after {
+  content: ''; }
+
+.ss-toaster:before, .ss-toaster.right:after {
+  content: ''; }
+
+.ss-microwave:before, .ss-microwave.right:after {
+  content: ''; }
+
+.ss-electrickettle:before, .ss-electrickettle.right:after {
+  content: ''; }
+
+.ss-refrigerator:before, .ss-refrigerator.right:after {
+  content: ''; }
+
+.ss-freezer:before, .ss-freezer.right:after {
+  content: ''; }
+
+.ss-utensils:before, .ss-utensils.right:after {
+  content: '🍴'; }
+
+.ss-cookingutensils:before, .ss-cookingutensils.right:after {
+  content: ''; }
+
+.ss-whisk:before, .ss-whisk.right:after {
+  content: ''; }
+
+.ss-pizzacutter:before, .ss-pizzacutter.right:after {
+  content: ''; }
+
+.ss-measuringcup:before, .ss-measuringcup.right:after {
+  content: ''; }
+
+.ss-colander:before, .ss-colander.right:after {
+  content: ''; }
+
+.ss-eggtimer:before, .ss-eggtimer.right:after {
+  content: ''; }
+
+.ss-platter:before, .ss-platter.right:after {
+  content: ''; }
+
+.ss-plates:before, .ss-plates.right:after {
+  content: ''; }
+
+.ss-steamplate:before, .ss-steamplate.right:after {
+  content: ''; }
+
+.ss-cups:before, .ss-cups.right:after {
+  content: ''; }
+
+.ss-steamglass:before, .ss-steamglass.right:after {
+  content: ''; }
+
+.ss-pot:before, .ss-pot.right:after {
+  content: ''; }
+
+.ss-steampot:before, .ss-steampot.right:after {
+  content: ''; }
+
+.ss-chef:before, .ss-chef.right:after {
+  content: ''; }
+
+.ss-weathervane:before, .ss-weathervane.right:after {
+  content: ''; }
+
+.ss-thermometer:before, .ss-thermometer.right:after {
+  content: ''; }
+
+.ss-thermometerup:before, .ss-thermometerup.right:after {
+  content: ''; }
+
+.ss-thermometerdown:before, .ss-thermometerdown.right:after {
+  content: ''; }
+
+.ss-droplet:before, .ss-droplet.right:after {
+  content: '💧'; }
+
+.ss-sunrise:before, .ss-sunrise.right:after {
+  content: '🌅'; }
+
+.ss-sunset:before, .ss-sunset.right:after {
+  content: '🌇'; }
+
+.ss-sun:before, .ss-sun.right:after {
+  content: '☀'; }
+
+.ss-cloud:before, .ss-cloud.right:after {
+  content: '☁'; }
+
+.ss-clouds:before, .ss-clouds.right:after {
+  content: ''; }
+
+.ss-partlycloudy:before, .ss-partlycloudy.right:after {
+  content: '⛅'; }
+
+.ss-rain:before, .ss-rain.right:after {
+  content: '☔'; }
+
+.ss-rainheavy:before, .ss-rainheavy.right:after {
+  content: ''; }
+
+.ss-lightning:before, .ss-lightning.right:after {
+  content: '☇'; }
+
+.ss-thunderstorm:before, .ss-thunderstorm.right:after {
+  content: '⛈'; }
+
+.ss-umbrella:before, .ss-umbrella.right:after {
+  content: '☂'; }
+
+.ss-rainumbrella:before, .ss-rainumbrella.right:after {
+  content: ''; }
+
+.ss-rainbow:before, .ss-rainbow.right:after {
+  content: '🌈'; }
+
+.ss-rainbowclouds:before, .ss-rainbowclouds.right:after {
+  content: ''; }
+
+.ss-fog:before, .ss-fog.right:after {
+  content: ''; }
+
+.ss-wind:before, .ss-wind.right:after {
+  content: ''; }
+
+.ss-tornado:before, .ss-tornado.right:after {
+  content: ''; }
+
+.ss-snowflake:before, .ss-snowflake.right:after {
+  content: '❄'; }
+
+.ss-snowcrystal:before, .ss-snowcrystal.right:after {
+  content: '❆'; }
+
+.ss-lightsnow:before, .ss-lightsnow.right:after {
+  content: ''; }
+
+.ss-snow:before, .ss-snow.right:after {
+  content: ''; }
+
+.ss-heavysnow:before, .ss-heavysnow.right:after {
+  content: ''; }
+
+.ss-hail:before, .ss-hail.right:after {
+  content: ''; }
+
+.ss-crescentmoon:before, .ss-crescentmoon.right:after {
+  content: '🌙'; }
+
+.ss-waxingcrescentmoon:before, .ss-waxingcrescentmoon.right:after {
+  content: '🌒'; }
+
+.ss-firstquartermoon:before, .ss-firstquartermoon.right:after {
+  content: '🌓'; }
+
+.ss-waxinggibbousmoon:before, .ss-waxinggibbousmoon.right:after {
+  content: '🌔'; }
+
+.ss-waninggibbousmoon:before, .ss-waninggibbousmoon.right:after {
+  content: '🌖'; }
+
+.ss-lastquartermoon:before, .ss-lastquartermoon.right:after {
+  content: '🌗'; }
+
+.ss-waningcrescentmoon:before, .ss-waningcrescentmoon.right:after {
+  content: '🌘'; }
+
+.ss-fan:before, .ss-fan.right:after {
+  content: ''; }
+
+.ss-bike:before, .ss-bike.right:after {
+  content: '🚲'; }
+
+.ss-wheelchair:before, .ss-wheelchair.right:after {
+  content: '♿'; }
+
+.ss-briefcase:before, .ss-briefcase.right:after {
+  content: '💼'; }
+
+.ss-hanger:before, .ss-hanger.right:after {
+  content: ''; }
+
+.ss-comb:before, .ss-comb.right:after {
+  content: ''; }
+
+.ss-medicalcross:before, .ss-medicalcross.right:after {
+  content: ''; }
+
+.ss-up:before, .ss-up.right:after {
+  content: '⬆'; }
+
+.ss-upright:before, .ss-upright.right:after {
+  content: '⬈'; }
+
+.ss-right:before, .ss-right.right:after {
+  content: '➡'; }
+
+.ss-downright:before, .ss-downright.right:after {
+  content: '⬊'; }
+
+.ss-down:before, .ss-down.right:after {
+  content: '⬇'; }
+
+.ss-downleft:before, .ss-downleft.right:after {
+  content: '⬋'; }
+
+.ss-left:before, .ss-left.right:after {
+  content: '⬅'; }
+
+.ss-upleft:before, .ss-upleft.right:after {
+  content: '⬉'; }
+
+.ss-navigateup:before, .ss-navigateup.right:after {
+  content: ''; }
+
+.ss-navigateright:before, .ss-navigateright.right:after {
+  content: '▻'; }
+
+.ss-navigatedown:before, .ss-navigatedown.right:after {
+  content: ''; }
+
+.ss-navigateleft:before, .ss-navigateleft.right:after {
+  content: '◅'; }
+
+.ss-retweet:before, .ss-retweet.right:after {
+  content: ''; }
+
+.ss-share:before, .ss-share.right:after {
+  content: ''; }
+
+
+.navbar-default{
+  width: 100%;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 9;
+  height:100px;
+  -webkit-transform: translateZ(0);
+  overflow: visible;
+  background:#ffffff;
+  box-shadow:none !important;
+}
+
+.navbar-scroll{
+  box-shadow:0 2px 5px rgba(0, 0, 0, 0.40), 0 2px 5px rgba(0, 0, 0, 0.16) !important;
+  position: fixed;
+}
+
+.navbar-scroll .subnav{
+  display:none;
+}
+

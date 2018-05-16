@@ -1,0 +1,45 @@
+<div class="col-md-4 col-md-offset-4">
+  <div class="well" ng-show="vm.account">
+    <form role="form" class="settings" ng-submit="vm.update()">
+      <div class="form-group">
+        <label for="settings__email">Email</label>
+        <input type="text" class="form-control" id="settings__email" ng-model="vm.account.email" placeholder="ex. john@example.com" />
+      </div>
+
+      <div class="form-group">
+        <label for="settings__password">New Password</label>
+        <input type="password" class="form-control" id="settings__password" ng-model="vm.account.password" placeholder="ex. notgoogleplus" />
+      </div>
+
+      <div class="form-group">
+        <label for="settings__confirm-password">Confirm Password</label>
+        <input type="password" class="form-control" id="settings__confirm-password" ng-model="vm.account.confirm_password" placeholder="ex. notgoogleplus" />
+      </div>
+
+      <div class="form-group">
+        <label for="settings__first_name">First Name</label>
+        <input type="text" class="form-control" id="settings__first_name" ng-model="vm.account.first_name" placeholder="" />
+      </div>
+      
+      <div class="form-group">
+        <label for="settings__last_name">Last Name</label>
+        <input type="text" class="form-control" id="settings__last_name" ng-model="vm.account.last_name" placeholder="" />
+      </div>
+      
+      <div class="form-group">
+        <label for="settings__username">Username</label>
+        <input type="text" class="form-control" id="settings__username" ng-model="vm.account.username" placeholder="ex. notgoogleplus" />
+      </div>
+      
+      <div class="form-group">
+        <label for="settings__tagline">Title</label>
+        <textarea class="form-control" id="settings__title" ng-model="vm.account.title" placeholder="ex. This is Not Google Plus." />
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Update</button>
+        <a style="float:right;margin:20px;" ng-click="vm.destroy()"  href="javascript:void(0)">Delete Account</a>
+      </div>
+    </form>
+  </div>
+</div>

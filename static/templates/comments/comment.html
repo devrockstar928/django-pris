@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="comment">
+      <div class="comment__meta">
+          <div class="avatar-container">
+              <img src="{{ comment.author.gravatar_url }}" width="35" height="35" class="avatar med" ng-show="comment.author.has_gravatar" ng-cloak/>
+              <div class="avatar med" ng-hide="comment.author.has_gravatar" ng-cloak>
+                <span ng-bind="comment.author.gravatar_url"></span>
+              </div>
+              <div class="username">{{ comment.author.username }}</div>
+            
+            <div><small>{{ comment.created_at | fromNow}}</small></div>
+          </div>
+     </div>
+
+      <div class="comment__content">
+        <div ng-bind-html="comment.comment"></div>
+      </div>
+    </div>
+  </div>
+</div>

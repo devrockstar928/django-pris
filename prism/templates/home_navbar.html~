@@ -1,0 +1,16 @@
+<header ng-controller="HomeNavbarController as vm">
+    <div class="container-fluid">
+        <a href="/" target="_self" class="navbar-brand">
+            <img src="/static/img/logo-med-grad.png" />
+            Prism.io Logo
+        </a>
+        <nav class="menu-main-navigation-container">
+        <ul id="menu-main-navigation" class="menu">
+            <li id="menu-item-13" class="btn btn-secondary menu-item menu-item-type-custom menu-item-object-custom menu-item-13"><a href="#">Pricing</a></li>
+            <li id="menu-item-14" class="btn btn-secondary menu-item menu-item-type-custom menu-item-object-custom menu-item-14"><a href="#">About</a></li>
+            <li id="menu-item-15" class="btn btn-secondary menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="#">API</a></li>
+            <li id="menu-item-16" class="btn btn-secondary menu-item menu-item-type-custom menu-item-object-custom menu-item-16"><a href="/login">Sign in</a></li>
+        </ul>
+        </nav>
+    </div>
+</header>

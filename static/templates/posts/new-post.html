@@ -1,0 +1,91 @@
+<label for="post__content"><h1>Add Content</h1></label>
+<form role="form" ng-submit="submit()" id="new-post-form" class="new-post-form">
+
+  <div flow-init="" flow-object="obj.flowObject" class="form-group">
+
+
+      <div class="image__content">
+
+    <div flow-files-submitted="$flow.upload()" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" class="ng-scope post-image">
+      <div class="drop" flow-drop="" ng-class="dropClass">
+
+
+          <p id="pasteArea" onpaste="pageImage(event);" class="drag-drop-title" ng-hide="$flow.files.length || isClipboard">
+            <span class="upload-btn" flow-btn>
+            
+              <img align="center" src="/static/img/add-content.gif" /><br /><br />
+
+              <strong>Browse to upload an image</strong><input type="file" multiple="multiple" style="visibility: hidden; position: absolute;">
+
+            </span> 
+
+            <br />Drag and drop an image here, or simply<br /> copy and paste (cmd+v) into this box.</p>
+          <div id="pasteArea1" onpaste="pageImage(event);" class="thumbnail" ng-show="$flow.files.length || isClipboard">
+            <img id="pastedImage" flow-img="$flow.files[0]" />
+          </div>
+      </div>
+
+      <div class="upload-section" ng-show="$flow.isUploading() || $flow.files.length">
+        <div class="all-progress">
+            <span ng-show="$flow.isUploading()">Uploading...</span><span ng-hide="$flow.isUploading()">Completed</span>
+            <span id="upload-toggle"><i class="fa fa-minus-square"></i></span>
+        </div>
+        <div class="upload-toggle-section">
+            <div class="all-buttons" ng-show="$flow.files.length && !$flow.isUploading()">
+                <a class="cancel-all-btn" ng-click="$flow.cancel()">Cancel all</a>
+            </div>
+            <div ng-repeat="file in $flow.files">
+              <div class="item">
+                <span class="image-thumb"><img width="20" height="20" flow-img="file"/></span>
+                <span class="image-name">{{ file.name }}</span>
+                <span class="image-progress" ng-show="file.isUploading()">Uploading...</span>
+                <span class="image-progress" ng-show="file.isComplete()">Uploaded</span>
+                <a class="cancel-btn" ng-click="file.cancel()" ng-show="file.isUploading()">Cancel</a>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- end div-->
+  </div> <!-- end image__content-->
+
+      <div class="image__description">
+
+          <label for="post__content"><h3>Add a description</h3></label>
+          <textarea type="text" class="post_textbox post_title" ng-model="description" placeholder="Add a description here..." ></textarea>
+    <!--
+          <textarea class="post_textarea post_textbox post_content" placeholder="Enter a description for the key takeaway from this screenshot here (500 characters max)." text-angular="" class="post-input" ng-model="description" ng-show="$flow.files.length || isClipboard"></textarea>
+
+    <input type="text" class="post_textbox post_email" ng-model="username" placeholder="Enter a username of someone to share this lens with." ng-show="$flow.files.length || isClipboard"/>
+
+    <input type="text" class="post_textbox post_report" ng-model="report_link" placeholder="Enter the source url for this image." ng-show="$flow.files.length || isClipboard"/>
+  -->
+
+  <bs-dropdown id="post-board" data-menu-type="button" select-val="selected_type = selectedVal"
+        preselected-item="selected_type" data-dropdown-data="post_types" create_board="create_board()">
+    </bs-dropdown>
+
+  <div class="form-group">
+    <button style="float:right;" type="submit" class="btn btn-primary">
+      Post
+    </button>
+  </div>
+</form>
+
+<div class="post-loader" ng-show="isPosted">
+  <svg class="circular">
+    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+  </svg>
+</div>
+
+</div>
+
+
+<div class="clearfix"/>
+<div class="clearfix"/>
+
+</div>
+
+
+

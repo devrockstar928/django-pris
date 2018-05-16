@@ -1,0 +1,104 @@
+{% load compress %}
+{% load staticfiles %}
+
+<script type="text/javascript" src="{% static 'bower_components/moment/min/moment.min.js' %}"></script>
+
+{% compress js %}{% endcompress %}
+<script type="text/javascript" src="{% static 'bower_components/jquery/dist/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/underscore/underscore.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/bootstrap/dist/js/bootstrap.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/bootstrap-material-design/dist/js/material.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/bootstrap-material-design/dist/js/ripples.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'bower_components/jquery.hotkeys/jquery.hotkeys.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'bower_components/Keypress/keypress.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'bower_components/typed.js/js/typed.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'bower_components/angular/angular.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-resource/angular-resource.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-ui-router/release/angular-ui-router.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-route/angular-route.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-cookies/angular-cookies.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/ngDialog/js/ngDialog.js' %}"></script>
+<script type="text/javascript" src="{% static 'lib/snackbarjs/snackbar.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-touch/angular-touch.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-bootstrap/ui-bootstrap.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-bootstrap/ui-bootstrap-tpls.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-loading-bar/build/loading-bar.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-bootstrap-select/build/angular-bootstrap-select.min.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'bower_components/ui-router-extras/release/ct-ui-router-extras.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'bower_components/ng-scrollbar/dist/ng-scrollbar.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/flow.js/dist/flow.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/fusty-flow.js/src/fusty-flow.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/fusty-flow.js/src/fusty-flow-factory.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/ng-flow/dist/ng-flow.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'bower_components/angular-aria/angular-aria.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-animate/angular-animate.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-material/angular-material.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/jquery.hotkeys/jquery.hotkeys.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/Keypress/keypress.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'lib/textAngular/textAngular.js' %}"></script>
+<script type="text/javascript" src="{% static 'lib/textAngular/textAngular-sanitize.js' %}"></script>
+<script type="text/javascript" src="{% static 'lib/textAngular/textAngularSetup.js' %}"></script>
+<script type="text/javascript" src="{% static 'lib/custom.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'javascripts/prism.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/prism.config.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/prism.routes.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'javascripts/accounts/accounts.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/accounts/services/account.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/accounts/controllers/account.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/accounts/controllers/account-settings.controller.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'javascripts/authentication/authentication.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/authentication/services/authentication.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/authentication/controllers/register.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/authentication/controllers/login.controller.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'javascripts/layout/layout.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/layout/controllers/index.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/layout/controllers/discover.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/layout/controllers/navbar.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/layout/controllers/home_navbar.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/layout/controllers/home.controller.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'javascripts/posts/posts.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/posts/services/posts.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/posts/directives/posts.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/posts/directives/post.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/posts/controllers/posts.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/posts/controllers/post.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/posts/controllers/new-post.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/posts/controllers/post-popup.controller.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'javascripts/comments/comments.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/comments/services/comments.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/comments/directives/comments.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/comments/directives/comment.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/comments/controllers/comments.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/comments/controllers/comment.controller.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'javascripts/boards/boards.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/boards/services/boards.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/boards/directives/boards.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/boards/directives/board.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/boards/controllers/boards.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/boards/controllers/board.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/boards/controllers/new-board.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/boards/controllers/invite-board.controller.js' %}"></script>
+{#<script type="text/javascript" src="{% static 'javascripts/comments/controllers/new-comment.controller.js' %}"></script>#}
+
+
+<script type="text/javascript" src="{% static 'javascripts/utils/utils.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/utils/services/snackbar.service.js' %}"></script>
+

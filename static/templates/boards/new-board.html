@@ -1,0 +1,45 @@
+<label for="board__content"><h1>Create a board</h1></label>
+  <form role="form" ng-submit="submit()" id="new-board-form" class="new-board-form">
+
+<div style="float:left;width:50%">
+  <h3>Describe your purpose</h3>
+  <input type="text" class="board_textbox board_title" ng-model="title" placeholder="Describe your purpose for this board" />
+  <h3>Add a description</h3>
+  <textarea class="board_textarea board_textbox board_content" placeholder="Tell us more in less than 140 characters" text-angular="" class="board-input" ng-model="description"></textarea>
+</div>
+
+<div style="float:left;width:40%;margin-left:5%;">
+
+  <h3>Share your board</h3>
+  <input type="text" class="board_textbox bboard__nameoard_email" ng-model="email" placeholder="Enter the email address of people to share this board with"/>
+
+    <br /><br />
+
+  <div class="togglebutton">
+    <label>
+      <input type="checkbox" ng-click="changeBoardType()">
+        <span class="toggle"></span>{{ board_type }} <!--(By default all members of your current organization will be granted access to this board)-->
+    </label>
+  </div>
+
+<br />
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">
+      Create
+    </button>
+  </div>
+</form>
+
+<div class="board-loader" ng-show="isPosted">
+  <svg class="circular">
+    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+  </svg>
+</div>
+
+</div>
+
+<div class="clearfix"/>
+<div class="clearfix"/>
+
+</div>

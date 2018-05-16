@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+      <p align="center"><img align="center" src="/static/img/logo-large-grad.png" alt="Prism" /> </p>
+      <h1><center>Sign Up for Prism</center></h1>
+      <p><center>Capture and share insights, instantly.</center></p>
+      <br />
+
+ <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align:center;">
+
+<div class="row">
+
+  <div class="col-sm-12">
+      <a class="btn btn-primary btn-active" style="border:1px solid #CCC;" href="/login/slack/" ng-click="vm.socialLogin($event, 'slack')">&nbsp;&nbsp;Sign Up with Slack&nbsp;&nbsp;</a>
+      <br />
+      <a class="btn btn-primary btn-active" style="border:1px solid #CCC;" href="/login/google-oauth2/" ng-click="vm.socialLogin($event, 'google-oauth2')">Sign Up with Google</a>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+<div class="row">
+
+  <div class="col-sm-12">
+    <div style="text-align:center;margin:10px 0;">or</div>
+    <h3 style="text-align:center;">
+      <a href="#" onclick="$('.form-auth').show();">Sign Up with Email</a>
+    </h3>
+
+      <form style="display:none;" class="form-auth" role="form" ng-submit="vm.register()">
+        <div class="form-group">
+          <input type="email" class="form-control" id="register__email" ng-model="vm.email" placeholder="Email: ex. john@notgoogle.com" />
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-control" id="register__username" ng-model="vm.username" placeholder="Username: ex. johny415" />
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-control" id="register__first_name" ng-model="vm.first_name" placeholder="First Name: ex. john" />
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-control" id="register__last_name" ng-model="vm.last_name" placeholder="Last Name: ex. bremmer" />
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-control" id="register__company" ng-model="vm.company" placeholder="Company Name: ex. prism" />
+        </div>
+
+        <div class="form-group">
+          <input type="password" class="form-control" id="register__password" ng-model="vm.password" placeholder="Password: ex. yourpass1" />
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Sign Up</button>
+        </div>
+      </form>
+
+    
+    </div><!-- end row -->
+    </div><!-- end col -->
+
+    <div class="clearfix"></div>
+
+    </div>
+  </div>
+</div>

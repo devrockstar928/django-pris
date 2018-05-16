@@ -1,0 +1,32 @@
+<div class="ng-cloack"  ng-hide="posts.length || notLoaded">
+  <div class="col-sm-12 no-posts-here">
+      <center style="background:#EEEEEE;padding:20px;">
+      <p align="center"><img align="center" src="/static/img/triangle_50.png" alt="Prism" /> </p>
+      <h1>Welcome to Prism</h1>
+      <h2>A visual collection of your team's <i><strong>inspirations, ideas &amp; insights</strong></i>.</h2>
+      </center>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      
+      <div id="onboarding-content">
+      <div id="getting-started" class="well">
+        <p><strong>Getting started is easy.</strong></p>
+        <p>Simply upload some screenshots.</p>
+
+        <a style="display:block !important;" class="btn btn-primary"
+           href="javascript:void(0)"
+           ng-show="vm.isAuthenticated"
+           ng-dialog="/static/templates/posts/new-post.html"
+           ng-dialog-controller="NewPostController as vm">Click here to try it</a>
+        <hr />
+        <p><strong>Coming soon!</strong></p>
+        <p>Connect to your email or dropbox.</p>
+        
+        <button type="upload" class="btn btn-primary" disabled="true">Sign in with Dropbox</button><br />
+        <button type="upload" class="btn btn-primary"  disabled="true">Sign in with Google</button>
+      </div>
+      </div>
+      <!--<div style="float:right;margin-right:-15px;"><img src="/static/img/onboarding-bg.gif" alt="onboarding" /></div>-->
+      
+  </div>
+</div>

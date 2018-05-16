@@ -1,0 +1,142 @@
+<div class="loader" ng-hide="isLoaded">
+    <svg class="circular">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+    </svg>
+</div>
+
+<div id="post-lightbox" ng-class="modal-content" ng-show="isLoaded" ng-keydown="key_capture($event)">
+  
+  <section layout="row" flex layout-sm="column" layout-sm="column">
+
+     <button type="button" class="close" ng-click="modal_close()" aria-hidden="true"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+   
+
+    <md-content flex="70" flex-sm="100" flex-order-sm="1" flex-order-md="1" class="md-padding modal-body clearfix pull-left">
+   
+
+      <div layout="column" layout-fill layout-align="center center">
+        
+        <div class="post-section">
+          
+        <div class="post__content">
+
+        <div class="post__image" ng-bind-html="post.image"></div>
+
+        
+               
+     
+          </div> <!-- end post content -->
+
+        </div> <!-- end post section -->
+
+      </div>
+
+      
+    </md-content>
+
+    <md-content layout-padding flex="30" flex-sm="100" flex-order-sm="2" flex-order-md="2" class="md-content-right md-whiteframe-z1 pull-right">
+   
+    
+      <md-content class="md-padding">
+        
+      <div id="frame-menu">
+ 
+        <div class="post__meta" style="margin-top:20px">
+
+        <div class="avatar-container">
+
+          <img src="{{ post.author.gravatar_url }}" width="40" height="40" class="avatar large" ng-show="post.author.has_gravatar"/>
+         
+          <div class="avatar large" ng-hide="post.author.has_gravatar">
+            {{ post.author.gravatar_url }}
+          </div>
+
+          <div class="username">{{ post.author.username }}</div>
+         
+          <div><small>{{ post.created_at | fromNow}}</small></div>
+         
+          </div>
+                  
+
+          <p class="post__desc" ng-bind-html="post.description"></p>
+
+              <p>
+                <div class="post__link" ng-hide="post.report_link == ''" >link:
+                  <a href="{{ post.report_link }}" ng-bind-html="post.report_link" target="_blank">
+                    {{ post.report_link }}
+                  </a>
+                </div>
+              </p>
+
+                 <div class="card__actions">
+
+                    <a href="#" class="action-fav" ng-click="like_unlike(post.id)">
+                     <a href="#" class="action-fav action-fav-{{ post.id }}" ng-click="like_unlike(post.id)">
+                      <div class="icon icon-float-left ss-up"></div>
+                      <div class="icon icon-liked icon-float-left ss-up"></div>
+                     </a>
+                    <span>{{ like_count }}</span> 
+      
+                     
+                 </div>
+
+                 <hr />
+
+                  <h2>Comments (<span>{{ comment_count }}</span>)</h2>
+                  <div class="comments">
+                   <div style="display:block;" class="well comments">
+                    <div ng-repeat="comment in comments" class="comment-item">
+                        
+                      <div class="row">
+
+                          <div class="comment">
+                            <div class="comment__meta">
+                                <div class="avatar-container">
+                                    <img src="{{ comment.author.gravatar_url }}" width="25" height="25" class="avatar med" ng-show="comment.author.has_gravatar" ng-cloak/>
+                                    <div class="avatar med" ng-hide="comment.author.has_gravatar" ng-cloak>
+                                      <span ng-bind="comment.author.gravatar_url"></span>
+                                    </div>
+                                    <div class="username">{{ comment.author.username }}</div>
+                                    
+                                    <div><small>{{ comment.created_at | fromNow}}</small></div>
+                                  
+                                </div>
+                           </div>
+
+                            <div class="comment__content">
+                              <div ng-bind-html="comment.comment"></div>
+                            </div>
+                          </div>
+                        </div>
+
+                    </div>
+
+                  </div>
+
+                </div> <!-- end comments -->
+
+                    <form class="comment-form" role="form" ng-submit="submit()">
+                      <div class="form-group">
+                        <textarea placeholder="Leave your feedback here." text-angular="" class="comment-input" ng-model="comment" ></textarea>
+                        <div class="comment-buttons" style="display: none;">
+                            <button type="submit" class="btn btn-primary comment__submit">
+                                Comment
+                            </button>
+                        </div>
+                        <p>Comments will notify 1 person. Anyone who can view this file can comment.</p>
+                      </div>
+                    </form>
+                </div>
+
+                </div>
+          
+
+
+
+          </div>
+      </md-content>
+    </md-sidenav>
+
+
+  </section>
+</div>

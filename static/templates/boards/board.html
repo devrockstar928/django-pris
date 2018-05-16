@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-sm-12">
+
+   <a href="/board/{{ board.id }}">
+
+    <div class="card {{ board.class }}">
+     <div class="board_bg_container images-{{ board.board_images.length }}">
+      <div class="board_bg_container_bg"></div>
+      <div class="board_bg" ng-repeat="image in board.board_images track by $index" ng-class="{clear: ($index) % 2==0}">
+        <div class="image{{ $index }} board__image" ng-bind-html="image"></div>
+      </div>
+     </div>
+      <div style="clear: both;"></div>
+
+
+      <div class="board">
+        
+        <h2 class="board__title" ng-bind="board.title"></h2>
+  
+        <p>by {{ board.author.username }}</p>
+        
+        <p align="center" class="board_description">
+         <span ng-bind="board.description"></span>
+        </p>
+
+        <div class="clearfix"></div>
+       </div>
+        
+        <div class="board_avatars" ng-if="board.subscriber.length" ng-cloak>
+            <div class="board_avatar" ng-repeat="avatar in board.subscriber | limitTo: 4">
+              <img src="{{ avatar.gravatar_url }}" width="25" height="25" class="avatar med" ng-show="avatar.has_gravatar"/>
+              <div class="avatar med" ng-hide="avatar.has_gravatar">
+                <span ng-bind="avatar.gravatar_url"></span>
+              </div>
+              <span class="tooltip_text">
+                <strong>{{ avatar.username }}</strong> @ <span ng-bind="avatar.org_name"></span>
+              </span>
+            </div>
+
+            <div class="board_avatar" ng-if="vm.canShowNumber()">
+                <div class="number">+{{ board.subscriber.length - 4 }}</div>
+            </div>
+            <div class="clearfix"></div>
+      </div>            
+
+    </div> <!-- end card -->
+</a>
+
+
+
+  </div>
+</div>

@@ -1,0 +1,164 @@
+<nav class="navbar navbar-default" role="navigation" ng-controller="NavbarController as vm" ng-init="init('Everything')">
+  <div class="container-fluid">
+    <div class="navbar-main">
+
+    <div class="navbar-header">
+
+      <ul id="nav-links" class="nav navbar-nav pull-right collapse navbar-collapse">
+        {% if user.is_authenticated %}
+        {% verbatim %}
+     
+        <!--<li><a id="new-board" role="menuitem" tabindex="-1" href="#" ng-click="vm.create_board()">+</a><br style="clear:both;" /></li>-->
+  
+          <li class="dropdown">
+
+            <a id="navatar" href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              <img align="left" style="margin-right:5px;" src="{{ vm.account.gravatar_url }}" width="35" height="35" class="avatar" ng-show="vm.account.has_gravatar" ng-cloak/>
+            <div class="avatar" ng-hide="vm.account.has_gravatar" ng-cloak>
+                <span ng-bind="vm.account.gravatar_url"></span>
+            </div>
+            </a>
+            <ul class="dropdown-menu pull-right">
+              <li><a href="/+{{ vm.account.username }}">Profile</a></l>
+              <li><a href="/+{{ vm.account.username }}/settings">Settings</a></li>
+              <li><a href="javascript:void(0)" ng-click="vm.logout()">Logout</a></li>
+            </ul>
+          </li>
+        {% endverbatim %}
+        {% else %}
+
+        {% endif %}
+      </ul>
+
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-links">
+        <span class="sr-only">Toggle Navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/" target="_self">
+        <img src="/static/img/logo-med-grad.png" />
+      </a>
+
+      <div class="" id="we-are-borg-navbar">
+      {% if user.is_authenticated %}
+      {% verbatim %}
+      
+
+      <div id="board-selector" class="dropdown">
+
+
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">
+          <!--<span ng-bind="selectedItem"></span>-->
+          <span>
+            <div id="board-switcher" class="icon ss-sync"></div>
+            SWITCH BOARD
+           </span>
+        </button>
+
+        <span class="caret"></span>
+
+
+
+        <ul class="dropdown-menu" role="menu" aria-labelledby="board__name">
+          <li id="switch-board" role="presentation">
+            <a role="menuitem" tabindex="-1" href="/">
+            <span>
+             <div id="board-switcher" class="icon ss-sync"></div>
+            <span class="dropdown-toggle">SWITCH BOARD</span>
+            </span>
+
+            </a>
+          </li>
+
+
+          <li role="presentation" class="divider"></li>
+          <li role="presentation divider"  class="ng-cloak" ng-if="vm.boards == ''" ng-cloak>
+            &nbsp;&nbsp;No boards
+          </li>
+          <li ng-repeat="board in vm.boards" role="presentation">
+
+              <a class="board{{ board.id }}" role="menuitem" tabindex="1" href="/board/{{board.id}}">{{ board.title }}</a>
+              <img class="people-icon" src="/static/img/people-icon.png" width="16" height="16" ng-show="board.is_share" />
+              <img class="lock-icon" src="/static/img/lock-icon.png" width="16" height="16" ng-show="board.is_lock" />
+          </li>
+          <li role="presentation" class="divider"></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#" ng-click="vm.create_board()">Create a new board +</a></li>
+        </ul>
+      </div>
+      {% endverbatim %}
+      {% endif %}
+
+        {% verbatim %}
+  <div class="container-fluid invite-section" ng-show="vm.isBoardPage()">
+
+    <div class='subnav'  ng-if="vm.isBoardPage() && vm.isPageLoaded()" ng-cloak style="padding-top: 10px;padding-bottom: 8px;">
+  
+ 
+      <h1 id="board__title" class="board__name" ng-show="selectedItem" ng-bind="selectedItem">
+      </h1>
+
+      <br />
+
+      <div class="board_details">
+
+      <p align="center" class="board_description">
+        <span ng-bind="vm.board_desc"></span>
+      </p>
+
+      <p align="center" ng-if="vm.board_creator.username">By <span ng-bind="vm.board_creator.username" class="ng-binding"></span></p>
+
+
+ 
+
+     <a class="unfollow-btn" href="javascript:void(0)" ng-click="vm.unfollow()" ng-if="vm.isAuthenticated && vm.isSubscriber() && vm.isBoardPage()" ng-cloak><span class="ss-view"></span> Watching</a>
+     <a class="follow-btn" href="javascript:void(0)" ng-click="vm.follow()" ng-if="vm.isAuthenticated && !vm.isSubscriber() && vm.isBoardPage()" ng-cloak><span class="ss-view"></span> Watch this board</a>
+
+
+
+     <div class="board_avatars" ng-if="vm.board_avatars.length && vm.isBoardPage()" ng-cloak>
+
+      {{ board_avatars.length }}
+        <div class="board_avatar" ng-repeat="avatar in vm.board_avatars | limitTo: 4">
+          <img src="{{ avatar.gravatar_url }}" width="25" height="25" class="avatar med" ng-show="avatar.has_gravatar"/>
+          <div class="avatar med" ng-hide="avatar.has_gravatar">
+            <span ng-bind="avatar.gravatar_url"></span>
+          </div>
+        </div>
+
+        <div class="board_avatar" ng-if="vm.canShowNumber()">
+            <div class="number">+{{ vm.board_avatars.length - 4 }}</div>
+        </div>
+
+
+           <a class="invite-btn"
+     href="javascript:void(0)"
+     ng-if="vm.isAuthenticated && vm.isBoardPage()"
+     ng-dialog="/static/templates/boards/invite-board.html"
+     ng-dialog-controller="InviteBoardController as vm" ng-cloak>+</a>
+
+
+
+      <div class="clearfix"></div>
+
+
+      </div> <!-- end board details -->
+
+     </div>
+
+   </div>
+
+
+  </div>
+  {% endverbatim %}
+
+      </div><!-- /#we-are-borg-navbar -->
+
+    </div> <!-- ./navbar-header -->
+
+
+    </div><!-- /.navbar-main -->
+  </div> <!-- /.container-fluid -->
+
+
+</nav>

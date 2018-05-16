@@ -1,0 +1,60 @@
+<a target="_self" ng-if="vm.isHomescreen()" href="/discover" class="discover-btn">
+	<span style="vertical-align:middle;" class="ss-compass"></span>
+	<span>Discover Public Boards</span>
+</a>
+
+<div ng-show="vm.posts.length || vm.isPostsLoaded()">
+    <posts posts="vm.posts" not-loaded="true" ng-if="!vm.isHomescreen()" ng-cloak></posts>
+</div>
+
+<div class="loader" ng-cloak ng-hide="vm.posts.length || vm.isHomescreen() || vm.isPostsLoaded()">
+    <svg class="circular">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+    </svg>
+</div>
+
+<div id="group-selector" class="dropdown" ng-if="vm.isHomescreen()" ng-cloak>
+
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+    <span ng-bind="selectedItem"></span>
+    <div class="icon ss-navigatedown"></div>
+  </button>
+
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <li ng-repeat="dropdown in vm.dropdowns" role="presentation">
+        <a role="menuitem" tabindex="-1" href="#" class="{{ vm.board_class[$index] }}" ng-click="vm.selectBoard($index);">{{ dropdown }}</a>
+    </li>
+  </ul>
+</div>
+
+
+<div style="clear: both;"></div>
+
+<div ng-show="vm.boards.length || vm.isBoardsLoaded()">
+    <boards boards="vm.boards" not-loaded="true" ng-if="vm.isHomescreen()" ng-cloak></boards>
+</div>
+
+<div class="loader" ng-cloak ng-hide="vm.boards.length || !vm.isHomescreen() || vm.isBoardsLoaded()">
+    <svg class="circular">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+    </svg>
+</div>
+
+<div ng-show="vm.isAuthenticated" class="btn-add-new-post dropdown ng-scope">
+  <!--<a class="btn btn-primary btn-fab btn-raised mdi-content-add btn-add-new-post  dropdown-toggle" href="javascript:void(0)" id="dropdownMenuNew" data-toggle="dropdown" aria-expanded="true"></a> -->
+  <button class="btn dropdown-toggle mdi-content-add btn-primary btn-fab btn-raised " type="button" id="dropdownMenuNew" data-toggle="dropdown" aria-expanded="false">
+  </button>
+
+<ul  class="dropdown-menu pull-right" style="top:0;right:50px;" role="menu" aria-labelledby="dropdownMenuNew">
+    <!--<li>
+        <a ng-show="vm.isAuthenticated" role="menuitem" tabindex="-1" href="#" ng-click="vm.post_dialog()">Get chrome extension</a>
+    </li>-->
+    <li>
+        <a ng-show="vm.isAuthenticated" role="menuitem" tabindex="-1" href="#" ng-click="vm.post_dialog()"><big>Add Content</big></a>
+
+    </li>
+    <li>
+        <a ng-show="vm.isAuthenticated" role="menuitem" tabindex="0" href="#"  ng-click="vm.create_board()"><big>Add New Board</big></a>
+    </li>
+</ul>
+</div>

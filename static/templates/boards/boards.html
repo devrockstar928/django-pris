@@ -1,0 +1,82 @@
+<div id="no-boards"  class="row ng-cloak" ng-hide="boards.length" ng-cloak>
+
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+<a href="javascript:void(0)"  ng-click="vm.create_board()">
+<div class="image__content">
+  <div class="ng-scope card">
+      <div class="drop">
+          <p>
+              <center class="content_plus">+</center>
+              <center class="content_add">Need new feature ideas?</center>
+              <span class="lighter">Create a new board gather them.</span>
+          </p>
+          </div>
+       </div>
+      </div>
+    </a>
+</div>
+
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+<a href="javascript:void(0)"  ng-click="vm.create_board()">
+<div class="image__content">
+  <div class="ng-scope card">
+      <div class="drop">
+          <p>
+              <center class="content_plus">+</center>
+              <center class="content_add">Need design inspirations?</center>
+              <span class="lighter">Create a new board to collect them.</span>
+          </p>
+          </div>
+       </div>
+      </div>
+    </a>
+</div>
+
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+<a href="javascript:void(0)"  ng-click="vm.create_board()">
+<div class="image__content">
+  <div class="ng-scope card">
+      <div class="drop">
+          <p>
+              <center class="content_plus">+</center>
+              <center class="content_add">Need feedback on your designs?</center>
+              <span class="lighter">Create a new board to receive it.</span>
+          </p>
+          </div>
+       </div>
+      </div>
+    </a>
+</div>
+
+<div id="boards" class="row" ng-cloak>
+    <div ng-repeat="column in vm.columns">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+          <div ng-repeat="board in column | filter: {'id': 1}">
+            <board board="board" index="$parent.$index + $index * vm.calculateNumberOfColumns()"></board>
+          </div>
+        </div>
+    </div>
+
+
+</div>
+
+</div><!-- end no boards-->
+
+
+<div id="boards" class="row" ng-cloak>
+    <div ng-repeat="column in vm.columns">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+          <div ng-repeat="board in column">
+            <board board="board" index="$parent.$index + $index * vm.calculateNumberOfColumns()"></board>
+          </div>
+        </div>
+    </div>
+
+    <div class="loader" ng-cloak ng-hide="boards.length || boards.length == ''">
+        <svg class="circular">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+        </svg>
+    </div>
+
+
+</div>
